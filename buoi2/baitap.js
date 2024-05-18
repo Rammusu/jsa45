@@ -1,0 +1,23 @@
+// Bai 1: Viet ham tinh chu vi va dien tich hinh chu nhat:
+//  param: w, h
+// return: obj {
+//     w: w,
+//     h: h,
+//     cv: ...,
+//     dt: ...,
+// } 
+function bai1(w,h) {
+return { 
+    w:w,
+    h:h,
+    cv: (w + h) * 2,
+    dt: (w * h),
+};
+}
+// arrow function
+const objHCN = ( w,h) => new Object({ w:w, h:h,  cv: (w + h) * 2,  dt: (w * h), })
+console.log(bai1(4,4));
+console.log(objHCN(3,5))
+// deu tra ve obj
+const a = new Number(12);
+console.log(typeof null)
