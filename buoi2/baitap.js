@@ -21,3 +21,8 @@ console.log(objHCN(3,5))
 // deu tra ve obj
 const a = new Number(12);
 console.log(typeof null)
+
+
+
+
+

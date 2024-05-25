@@ -1,0 +1,19 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+main {
+    margin-top: 45px;
+    padding: 0 100px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: column wrap;
+}
+#search-bar{
+    width: 400px;
+}
+#product-list {
+    width: 100px;
+    display: grid;
+        grid-template-columns: 
+}
