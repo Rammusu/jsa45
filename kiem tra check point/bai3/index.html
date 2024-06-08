@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <input type="text" id="name" placeholder="Tên">
+        <input type="number" id="age" placeholder="Tuổi">
+        <input type="email" id="email" placeholder="Email">
+        <button onclick="register()">Đăng ký</button>
+        <p class="error" id="error"></p>
+    </div>
+
+    <script>
+        function register() {
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const email = document.getElementById('email').value;
+            const errorElement = document.getElementById('error');
+
+            // Kiểm tra lỗi
+            if (!name || !age || !email) {
+                errorElement.textContent = 'Vui lòng nhập đầy đủ thông tin!';
+                return;
+            }
+
+            // Lưu thông tin vào LocalStorage
+            const user = {
+                name: name,
+                age: age,
+                email: email
+            };
+            localStorage.setItem('user', JSON.stringify(user));
+
+            // Chuyển hướng đến trang show.html
+            window.location.href = 'show.html';
+        }
+    </script>
+</body>
+</html>

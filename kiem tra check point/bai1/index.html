@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkpoint</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tính giai thừa</title>
+    </head>
+    <body>
+        <h1>Tính giai thừa của một số tự nhiên</h1>
+        <input type="number" id="numberInput" placeholder="Nhập một số tự nhiên">
+        <button onclick="tinhGiaiThua()">Tính giai thừa</button>
+        <p id="result"></p>
+    
+        <script>
+            function tinhGiaiThua() {
+                // Lấy giá trị từ input
+                const n = document.getElementById('numberInput').value;
+    
+                // Chuyển giá trị sang số nguyên
+                const number = parseInt(n, 10);
+    
+                // Kiểm tra nếu giá trị không phải là số hoặc nhỏ hơn 0
+                if (isNaN(number) || number < 0) {
+                    document.getElementById('result').textContent = 'Vui lòng nhập một số tự nhiên hợp lệ';
+                    return;
+                }
+    
+                // Khởi tạo biến kết quả
+                let giaiThua = 1;
+    
+                // Sử dụng vòng lặp để tính giai thừa
+                for (let i = 1; i <= number; i++) {
+                    giaiThua *= i;
+                }
+    
+                // Hiển thị kết quả
+                document.getElementById('result').textContent = `Giai thua cua ${number} = ${giaiThua}`;
+            }
+        </script>
+    </body>
+    </html>
+    
+</body>
+</html>

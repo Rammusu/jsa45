@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ tam giác cân rỗng</title>
+</head>
+<body>
+    <h1>Vẽ tam giác cân rỗng</h1>
+    <input type="number" id="heightInput" placeholder="Nhập chiều cao của tam giác">
+    <button onclick="veTamGiacCanRong()">Vẽ tam giác</button>
+    <pre id="triangle"></pre>
+
+    <script>
+        function veTamGiacCanRong() {
+            // Lấy giá trị từ input
+            const n = parseInt(document.getElementById('heightInput').value, 10);
+
+            // Kiểm tra nếu giá trị không phải là số hoặc nhỏ hơn 1
+            if (isNaN(n) || n < 1) {
+                document.getElementById('triangle').textContent = 'Vui lòng nhập một số tự nhiên lớn hơn 0';
+                return;
+            }
+
+            let result = '';
+
+            // Vẽ tam giác cân rỗng
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= 2 * n - 1; j++) {
+                    if (j === n - i + 1 || j === n + i - 1 || i === n) {
+                        result += '*';
+                    } else {
+                        result += ' ';
+                    }
+                }
+                result += '\n';
+            }
+
+            // Hiển thị tam giác
+            document.getElementById('triangle').textContent = result;
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
