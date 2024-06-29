@@ -1,0 +1,57 @@
+body{
+    display: flex;
+    /* chieu ngang */
+    justify-content: center; 
+    /* chieu doc */
+    align-items: center;
+}
+
+form {
+    margin: 20px;
+    border: 2px dotted red;
+    border-radius: 15px;
+    width: 400px;
+    height: 300px;
+    padding: 15px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form label {
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+form input {
+    width: 95%;
+    line-height: 25px;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+}
+
+
+form button {
+    margin-top: 15px;
+    font-size: 25px;
+    border: none;
+    background-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+#reset {
+    background-color: beige;
+}
+
+#login {
+    background-color: rgb(176, 120, 228);
+}

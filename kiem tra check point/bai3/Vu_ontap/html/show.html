@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>Your email is: <strong id="email">abc@gmail.com</strong> </p>
+    <p>Your password is: <strong id="password">123</strong> </p>
+
+
+    <script>
+        document.getElementById('email').innerText = JSON.parse(localStorage.getItem('current_user')).email;
+        document.getElementById('password').innerText = JSON.parse(localStorage.getItem('current_user')).password;
+    </script>
+</body>
+</html>
