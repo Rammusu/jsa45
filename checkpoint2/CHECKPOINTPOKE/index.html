@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pokedex">
+        <div class="pokedex-left">
+            <img src="pokedex-image.png" alt="Pokedex Image">
+        </div>
+        <div class="pokedex-right">
+            <select id="pokemon-select">
+                <!-- Các tùy chọn tên Pokémon sẽ được thêm vào đây -->
+            </select>
+            <button onclick="searchPokemon()">Search</button>
+            <div class="pokemon-info">
+                <h2>Name: <span id="name">--</span></h2>
+                <h2>Type: <span id="type">--</span></h2>
+                <h2>Height: <span id="height">--</span></h2>
+                <h2>Weight: <span id="weight">--</span></h2>
+                <h2>Bio: <span id="bio">--</span></h2>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

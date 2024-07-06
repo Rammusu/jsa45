@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Management</title>
+    <script>
+        let menu = ["rau xào", "thịt luộc", "gà rán"];
+
+        function saveToLocalStorage() {
+            localStorage.setItem('menu', JSON.stringify(menu));
+        }
+
+        function loadFromLocalStorage() {
+            const storedMenu = localStorage.getItem('menu');
+            if (storedMenu) {
+                menu = JSON.parse(storedMenu);
+            }
+        }
+
+        function showMenu() {
+            alert(menu.join(", "));
+        }
+
+        function addItem() {
+            const newItem = prompt("Mời người dùng nhập món ăn muốn thêm vào menu");
+            if (newItem) {
+                menu.push(newItem);
+                saveToLocalStorage();
+                showMenu();
+            }
+        }
+
+        function readMenu() {
+            showMenu();
+        }
+
+        function updateItem() {
+            const oldItem = prompt("Mời người dùng nhập vào tên món muốn update");
+            const index = menu.indexOf(oldItem);
+            if (index !== -1) {
+                const newItem = prompt("Mời người dùng nhập vào tên món ăn mới");
+                menu[index] = newItem;
+                saveToLocalStorage();
+                showMenu();
+            } else {
+                alert("Món ăn không tồn tại trong menu.");
+            }
+        }
+
+        function deleteItem() {
+            const deleteItem = prompt("Mời người dùng nhập vào tên món muốn Delete");
+            const index = menu.indexOf(deleteItem);
+            if (index !== -1) {
+                menu.splice(index, 1);
+                saveToLocalStorage();
+                showMenu();
+            } else {
+                alert("Món ăn không tồn tại trong menu.");
+            }
+        }
+
+        function handleInput(input) {
+            switch(input.toUpperCase()) {
+                case 'C':
+                    addItem();
+                    break;
+                case 'R':
+                    readMenu();
+                    break;
+                case 'U':
+                    updateItem();
+                    break;
+                case 'D':
+                    deleteItem();
+                    break;
+                default:
+                    alert("Lựa chọn không hợp lệ. Vui lòng nhập 'C', 'R', 'U', hoặc 'D'.");
+            }
+        }
+
+        window.onload = function() {
+            loadFromLocalStorage();
+            const userInput = prompt("Nhập 1 ký tự trong 4 ký tự sau: 'C', 'R', 'U', 'D'");
+            handleInput(userInput);
+        }
+    </script>
+</head>
+<body>
+    <h1>Restaurant Menu Management</h1>
+</body>
+</html>
